@@ -1,4 +1,5 @@
 FROM openjdk
-COPY ./target/example.smallest-0.0.1-SNAPSHOT.war  /usr/app
-WORKDIR /usr/app/
-ENTRYPOINT ["java","-jar", "*example.smallest-0.0.1-SNAPSHOT.war"]
+RUN  mkdir /app/
+COPY   .  /app/
+WORKDIR  /app/
+ENTRYPOINT ["java","-jar", "/app/target/example.smallest-0.0.1-SNAPSHOT.war"]
